@@ -8,6 +8,7 @@ export default function ProgressBar({ color, totalSections, currentSection }) {
                     <div id="barInner" style={{ background: color, width: `${((currentSection - 3) / totalSections) * 100}%` }}></div>
                 </div>
             </div>
+            Level {currentSection - 2}
         </div>
     )
 }

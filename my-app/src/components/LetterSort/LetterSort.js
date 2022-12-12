@@ -2,15 +2,27 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useState, useEffect } from "react";
 import "./LetterSort.css";
 import allWords from '../../wordLists/allWords';
-function LetterSort({ scrambleWord, solution, onSolve }) {
+function LetterSort({ usedPowerup, scrambleWord, solution, onSolve, onWrong }) {
     const [letters, setLetters] = useState(scrambleWord.split(""));
 
     useEffect(() => {
+        console.log("scrammbling")
         setLetters(scrambleWord.split(""));
     }, [scrambleWord]);
+
+    useEffect(() => {
+        if (usedPowerup) {
+            console.log("OWPER UPSED")
+            console.log(usedPowerup.effect(letters, solution))
+            setLetters(usedPowerup.effect(letters, solution));
+        }
+    }, [usedPowerup]);
+
     function check() {
         if (allWords.isWord(letters.join(""))) {
             onSolve();
+        } else {
+            onWrong();
         }
     }
     function onDragEnd(result) {
