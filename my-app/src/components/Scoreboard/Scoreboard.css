@@ -1,0 +1,12 @@
+#scoreboardContainer{
+    background:#1d1d1d;
+    border-radius:5px;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    font-weight: bold;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
