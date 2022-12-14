@@ -6,16 +6,16 @@
     height:45%;
   }
   .letter{
-    width:100px;
-    height:100px;
+    width:125px;
+    height:125px;
     border-radius:5px;
     box-shadow:rgba(0,0,0,.1) 0px 0px 10px;
     user-select: none;
     margin-right:15px;
     user-select: none;
     text-align: center;
-    line-height: 90px;
-    font-size:30px;
+    line-height: 110px;
+    font-size:70px;
     font-weight:bold;
     background:white;
   }
@@ -27,4 +27,8 @@
     gap:10px;
     height:100%;
     width:100%;
+  }
+  #checkButton{
+    font-size:23px;
+    margin-top:27px;
   }

@@ -27,7 +27,9 @@ const powerups = [
     }
 ]
 function getRandomPowerup() {
-    return powerups[Math.floor(Math.random() * powerups.length)];
+    let powerup = { ...powerups[Math.floor(Math.random() * powerups.length)] };
+    powerup.randId = Math.random();
+    return powerup;
 }
 export default getRandomPowerup;
 export { powerups };

@@ -2,21 +2,40 @@ import { useState, useEffect } from "react";
 import "./PowerUpBar.css";
 import getRandomPowerup from "../../powerups/powerups";
 import * as Icons from "react-icons";
-export default function PowerUpBar({ powerUpClicked, onUse }) {
+export default function PowerUpBar({ addNewPowerup, onUse }) {
+    const [powerups, setPowerups] = useState(new Array(3).fill("").map(() => getRandomPowerup()));
+    const [lastRandomAddPowerup, setLastRandomAddPowerup] = useState(-1);
     const numberOfPowerups = 3;
+
+    function OnUseInternal(powerup) {
+        console.log(powerups, powerup);
+        onUse(powerup);
+        setPowerups(powerups.filter((x) => {
+            return powerup.randId != x.randId;
+        }));
+    }
+
+    useEffect(() => {
+        if (lastRandomAddPowerup != addNewPowerup) {
+            if (powerups.length < numberOfPowerups) {
+                setPowerups(p => [...p, getRandomPowerup()]);
+            }
+        }
+        setLastRandomAddPowerup(addNewPowerup);
+    }, [addNewPowerup, powerups, lastRandomAddPowerup]);
+
     return (
         <div id="powerUpBarContainer">
             <div>
-                <h1>Powerups</h1>
+                <div style={{ "font-size": "35px", "font-weight": "bold", "margin": "5px" }}>Powerups</div>
             </div>
             <div id="powerUpList">
-                {new Array(3).fill(<PowerUp use={onUse} />)}
+                {powerups.map((x) => <PowerUp use={OnUseInternal} powerup={x} />)}
             </div>
         </div>
     )
 }
-function PowerUp({ use }) {
-    const [powerup, setPowerup] = useState(getRandomPowerup());
+function PowerUp({ use, powerup }) {
     function clicked() {
         use(powerup)
     }

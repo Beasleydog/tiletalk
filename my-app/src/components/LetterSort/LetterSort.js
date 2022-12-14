@@ -75,7 +75,7 @@ function LetterSort({ usedPowerup, scrambleWord, solution, onSolve, onWrong }) {
                     )}
                 </Droppable>
             </DragDropContext>
-            <button onClick={check}>
+            <button onClick={check} id="checkButton">
                 Check
             </button>
         </div>
