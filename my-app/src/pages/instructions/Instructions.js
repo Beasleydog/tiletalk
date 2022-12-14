@@ -5,7 +5,7 @@ export default function Instructions() {
 
     return (
         <FancyBackground color={getRandomColor()}>
-            <iframe id="embed" src="https://docs.google.com/presentation/d/17C1_6rhMahpv3fRBLrggLR3dq-X_86qlEKClBoKp0FE/embed" />
+            <iframe id="embed" src="https://docs.google.com/presentation/d/1NTAYDGh8j5nLsIZRzMqJplHW1AGuzKVg2WsoWbUbLVI/embed" />
             <div style={{
                 position: "absolute",
                 left: "50%",
