@@ -25,7 +25,9 @@ export default function Start() {
                         <div class="button" onClick={() => { window.location.replace("/game") }}>
                             Start
                         </div>
-                        <div class="button">
+                        <div class="button" onClick={() => {
+                            window.location.replace("/instructions");
+                        }}>
                             Instructions
                         </div>
                         <div class="button" onClick={() => {
