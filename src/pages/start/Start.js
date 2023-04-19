@@ -19,7 +19,7 @@ export default function Start() {
                 <div style={{ display: "none" }}>{test}</div>
                 <div id="startContainer">
                     <div id="title" style={{ zIndex: 99999999999 }}>
-                        TileTalk
+                        Scrambled
                     </div>
                     <div id="buttonContainer" style={{ zIndex: 99999999999 }}>
                         <div class="button" onClick={() => { window.location.replace("/game") }}>

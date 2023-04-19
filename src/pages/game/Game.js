@@ -1,10 +1,11 @@
 import { useState, React, memo } from 'react';
 import './Game.css';
 import LetterSort from '../../components/LetterSort/LetterSort.js';
-import nounList from '../../wordLists/nouns';
+import envNounList from '../../wordLists/climateWords';
 import scrambleWord from '../../functions/scrambleWord';
 import FancyBackground from '../../components/FancyBackground/FancyBackground.js';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import HeatBar from '../../components/HeatBar/HeatBar';
 import getRandomColor from '../../functions/getRandomColor';
 import PowerUpBar from '../../components/PowerUpBar/PowerUpBar';
 import LivesBar from '../../components/LivesBar/LivesBar';
@@ -26,7 +27,7 @@ const MemoizedHappyMsg = memo(({ isHappy }) => {
 function Game() {
   const [wordLength, setWordLength] = useState(3);
   const [isExploding, setIsExploding] = useState(false);
-  const [word, setWord] = useState(nounList.getRandom(wordLength));
+  const [word, setWord] = useState(envNounList.getRandom(wordLength));
   const [scrambledWord, setScrambledWord] = useState(scrambleWord(word));
   const [themeColor, setThemeColor] = useState(getRandomColor());
   const [lives, setLives] = useState(3);
@@ -80,7 +81,7 @@ function Game() {
 
 
   useEffect(() => {
-    setWord(nounList.getRandom(wordLength));
+    setWord(envNounList.getRandom(wordLength));
   }, [wordLength]);
   useEffect(() => {
     setScrambledWord(scrambleWord(word));
@@ -89,7 +90,7 @@ function Game() {
   function gotWrong() {
     setIsExploding(false);
     if (lives - 1 == 0) {
-      window.location.href = "/done#" + btoa("lost");
+      lost();
     }
     setLives(lives - 1);
 
@@ -99,6 +100,9 @@ function Game() {
     setTimeout(() => {
       setUsedPowerup(false);
     }, 10);
+  }
+  function lost() {
+    window.location.href = "/done#" + btoa("lost");
   }
 
 
@@ -116,6 +120,7 @@ function Game() {
           <PowerUpBar addNewPowerup={randNewPower} powerupsLeft={powerupsLeft} onUse={usePowerup} />
         </div>
         <div className="contentBottom" style={{ height: "20vh" }}>
+          <HeatBar onFire={lost} coolDown={isExploding} />
           <ProgressBar color={themeColor} totalSections={7} currentSection={wordLength} />
         </div>
       </div>

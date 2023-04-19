@@ -1,5 +1,5 @@
-#barContainer{
-    background:#1d1d1d;
+#heatbarContainer{
+    background:#504f4f;
     width:80%;
     height:50px;
     border-radius:8px 8px 0px 0px ;
@@ -8,10 +8,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
 }
-#barOuter{
+#heatBarOuter{
     background:whitesmoke;
-    width:90%;
+    width:80%;
     height:50%;
     box-shadow:rgba(0,0,0,.1) 0px 0px 10px;
     border-radius: 8px;
@@ -21,12 +22,12 @@
     align-items: center;
     padding:0px 3px;
 }
-#barInner{
+#heatBarInner{
     height:calc(100% - 6px);
     transition:width .2s ease-out;
     border-radius:5px;
 }
-#progressBarContainer{
+#heatBarContainer{
     width:100%;
     height:50px;
     display:flex;
@@ -35,5 +36,31 @@
     align-items: center;
     font-size: 23px;
     font-weight: bold;
-    z-index:1;
+    transform:translateY(10px);
+    z-index: 1;
+}
+#fireDisplay{
+    font-size: 60px;
+    position:fixed;
+    width: 100vw;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    left:-20px;
+    letter-spacing: -45px;
+    transition:all .5s linear;
+    animation:moveLeftRight 2s infinite ease-in-out;
+    z-index:0;
+}
+@keyframes moveLeftRight{
+    0%{
+        left:-20px;
+    }
+    50%{
+        left:60px;
+    }
+    100%{
+        left:-20px;
+
+    }
 }
