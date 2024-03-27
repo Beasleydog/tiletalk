@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.1d67ca30.css",
-    "main.js": "/static/js/main.ec940e65.js",
-    "index.html": "/index.html",
-    "main.1d67ca30.css.map": "/static/css/main.1d67ca30.css.map",
-    "main.ec940e65.js.map": "/static/js/main.ec940e65.js.map"
+    "main.css": "/tiletalk/build/static/css/main.d793065c.css",
+    "main.js": "/tiletalk/build/static/js/main.1bc41d68.js",
+    "index.html": "/tiletalk/build/index.html",
+    "main.d793065c.css.map": "/tiletalk/build/static/css/main.d793065c.css.map",
+    "main.1bc41d68.js.map": "/tiletalk/build/static/js/main.1bc41d68.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d67ca30.css",
-    "static/js/main.ec940e65.js"
+    "static/css/main.d793065c.css",
+    "static/js/main.1bc41d68.js"
   ]
 }
