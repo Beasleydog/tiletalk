@@ -9,14 +9,14 @@ export default function Leaderboard({ won }) {
     useEffect(updateBoard, []);
     function submitTime() {
         let name;
-        if (window.location.hash.slice(1)) {
+        if (window.location.hash.slice(7)) {
             name = prompt("Enter your name to be displayed on the leaderboard:");
-            document.getElementById("scoreform").value = (atob((window.location.hash.slice(1))));
+            document.getElementById("scoreform").value = (atob((window.location.hash.slice(7))));
             document.getElementById("nameform").value = name;
             document.getElementById("idform").value = id;
             document.getElementById("sendform").click();
             let temp = data;
-            temp.push({ name: name, score: Number(atob((window.location.hash.slice(1)))), id: id });
+            temp.push({ name: name, score: Number(atob((window.location.hash.slice(7)))), id: id });
             setData(temp);
             console.log(temp, data);
             console.log(id);

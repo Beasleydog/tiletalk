@@ -45,7 +45,7 @@ function Game() {
   function solved() {
     //If the player has solved level 7, redirect to win screen
     if (wordLength === 8) {
-      window.location.href = "/done#" + btoa(seconds);
+      window.location.href = "#/done#" + btoa(seconds);
     }
 
     //Turn off any exploding confetti
@@ -102,7 +102,7 @@ function Game() {
     }, 10);
   }
   function lost() {
-    window.location.href = "/done#" + btoa("lost");
+    window.location.href = "#/done#" + btoa("lost");
   }
 
 

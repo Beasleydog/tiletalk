@@ -6,8 +6,8 @@ import getRandomHappyMsg from "../../functions/getRandomHappyMsg";
 import ConfettiExplosion from 'react-confetti-explosion';
 import Leaderboard from "../../components/Leaderboard/Leaderboard";
 
-const time = Number(atob((window.location.hash.slice(1))))
-const won = atob(window.location.hash.slice(1)) !== "lost";
+const time = Number(atob((window.location.hash.slice(7))))
+const won = atob(window.location.hash.slice(7)) !== "lost";
 export default function Done() {
     const [themeColor, setThemeColor] = useState(getRandomColor());
     return (

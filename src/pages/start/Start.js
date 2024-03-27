@@ -22,11 +22,11 @@ export default function Start() {
                         Scrambled
                     </div>
                     <div id="buttonContainer" style={{ zIndex: 99999999999 }}>
-                        <div class="button" onClick={() => { window.location.replace("/game") }}>
+                        <div class="button" onClick={() => { window.location.replace("#/game") }}>
                             Start
                         </div>
                         <div class="button" onClick={() => {
-                            window.location.replace("/instructions");
+                            window.location.replace("#/instructions");
                         }}>
                             Instructions
                         </div>

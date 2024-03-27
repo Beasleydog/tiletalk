@@ -10,15 +10,15 @@ import {
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
-
+import { HashRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <HashRouter>
     <Routes>
       <Route exact path="/game" element={<Game />} />
       <Route path="/done" element={<Done />} />
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/" element={<Start />} />
     </Routes>
-  </Router>
+  </HashRouter>
 );

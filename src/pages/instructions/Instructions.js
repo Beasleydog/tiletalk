@@ -11,7 +11,7 @@ export default function Instructions() {
                 left: "50%",
                 bottom: "10px",
                 transform: "translateX(-50%)",
-            }} class="button" onClick={() => { window.location.replace("/") }}>
+            }} class="button" onClick={() => { window.location.replace("#/") }}>
                 Back
             </div>
         </FancyBackground>
